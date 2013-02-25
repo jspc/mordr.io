@@ -1,0 +1,15 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    colorize (0.5.8)
+    redis (3.0.2)
+    redis-objects (0.6.1)
+      redis (>= 3.0.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  colorize
+  redis
+  redis-objects
