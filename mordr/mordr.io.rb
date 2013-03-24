@@ -4,6 +4,7 @@
 
 $LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
 $LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'app')
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'app', 'routes')
 
 require 'sinatra'
 require 'mongo_mapper'
@@ -20,3 +21,6 @@ load 'mordr-item.rb'
 load 'mordr_config.rb'
 load 'mordr_routes.rb'
 
+include MordrUser
+include MordrList
+include MordrItem
