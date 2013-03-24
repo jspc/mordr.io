@@ -42,4 +42,13 @@ module MordrUser
     user_o.paid = true unless user.nil?
     user_o.save
   end
+
+  def login? handle, password
+    user_o = find_user handle
+    if user_o.nil? or BCrypt::Password.new( user_o.password ) != password
+      return false
+    end
+    return true
+  end
+
 end
