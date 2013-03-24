@@ -1,4 +1,9 @@
+require 'routes/login_routes'
 
 get '/' do
-  erb :index
+  if session[:logged_in]
+    erb :index
+  else
+    redirect '/login/'
+  end
 end
