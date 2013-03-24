@@ -4,7 +4,7 @@
 
 module MordrItem
   def find_item list_o, text
-    item_o = list_o.items.first( :text => text )
+    item_o = list_o.items
     return item_o unless item_o.nil?
     return false
   end

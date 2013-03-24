@@ -1,4 +1,5 @@
 require 'routes/login_routes'
+require 'routes/list_routes'
 
 get '/' do
   if session[:logged_in]
