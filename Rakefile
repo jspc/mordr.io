@@ -8,6 +8,6 @@ namespace :mordr do
 
   desc "Update app"
   task :update do
-    git pull
+    sh "git pull"
   end
 end
