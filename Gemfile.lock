@@ -50,6 +50,7 @@ GEM
       rack (~> 1.5, >= 1.5.2)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
+    stringex (1.5.1)
     tilt (1.3.6)
 
 PLATFORMS
@@ -66,3 +67,4 @@ DEPENDENCIES
   redis
   redis-objects
   sinatra
+  stringex

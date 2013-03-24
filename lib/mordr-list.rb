@@ -2,6 +2,8 @@
 #
 # ToDo list controller
 
+require 'stringex'
+
 module MordrList
   def find_list user_o, title
     list_o = user_o.lists.first( :title => title )
@@ -13,6 +15,7 @@ module MordrList
     return nil if find_list( user_o, title )
     list_o = user_o.create( :lists => [ Mlist.new(
                                                   :title     => title,
+                                                  :slug      => title.to_url,
                                                   :describe  => desc
                                                   )
                             ] )

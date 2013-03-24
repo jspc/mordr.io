@@ -6,6 +6,7 @@ class Mlist
   include MongoMapper::EmbeddedDocument
 
   key :title,    String,  :required => true
+  key :slug,     String,  :required => true
   key :describe, String
   key :public,   Boolean, :default => true
 
