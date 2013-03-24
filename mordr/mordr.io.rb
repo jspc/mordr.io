@@ -3,6 +3,7 @@
 # Application code/ routes
 
 $LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'app')
 
 require 'sinatra'
 require 'haml'
@@ -10,19 +11,13 @@ require 'mongo_mapper'
 require 'redis'
 
 require 'models/user'
-require 'models/list'
+require 'models/mlist'
 require 'models/item'
 
-configure do
-  enable :sessions
+load 'mordr-user.rb'
+load 'mordr-list.rb'
+load 'mordr-item.rb'
 
-  redis = Redis.new
-  MongoMapper.database = 'mordr'
+load 'mordr_config.rb'
+load 'mordr_routes.rb'
 
-  set :root,            Proc.new { File.join(File.dirname(__FILE__), '..') }
-  set :session_secret,  redis.get( 'mordr.io-key')
-end
-
-get '/' do
-  puts "Woo!"
-end

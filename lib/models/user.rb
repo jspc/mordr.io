@@ -12,6 +12,6 @@ class User
 
   timestamps!
 
-  many :lists
+  many :mlists
 
 end
