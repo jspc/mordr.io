@@ -3,7 +3,7 @@
 # List items
 
 class Item
-  include MongoMapper::Document
+  include MongoMapper::EmbeddedDocument
 
   key :text, String,  :required => true
   key :desc, String,  :length => { :maximum => 100 }

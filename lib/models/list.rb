@@ -3,7 +3,7 @@
 # Simple ToDo list model
 
 class List
-  include MongoMapper::Document
+  include MongoMapper::EmbeddedDocument
 
   key :title,   String,  :required => true
   key :descibe, String
@@ -13,4 +13,3 @@ class List
 
   many :items
 end
-b
