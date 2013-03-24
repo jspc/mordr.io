@@ -1,3 +1,4 @@
+
 get '/' do
-  puts "Woo!"
+  erb :index
 end
