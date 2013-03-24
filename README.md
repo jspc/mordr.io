@@ -36,3 +36,35 @@ Application stuff lives in `app/`:
 ```
 
 With the main executable in `mordr\mordr.io.rb` - this largely just calls everything else. Fucked up, no?
+
+Basic Shell
+--
+
+The basic shell of this app (for the pretty stuff; you can get back here on commit 518d190762649e4f38c434c64180a384f9488c46):
+
+```bash
+.
+├── Gemfile
+├── Gemfile.lock
+├── README.md
+├── app
+│   ├── mordr_config.rb
+│   └── mordr_routes.rb
+├── etc
+├── lib
+│   ├── models
+│   │   ├── item.rb
+│   │   ├── mlist.rb
+│   │   └── user.rb
+│   ├── mordr-item.rb
+│   ├── mordr-list.rb
+│   └── mordr-user.rb
+├── log
+├── mordr
+│   └── mordr.io.rb
+└── views
+    ├── index.erb
+    └── layout.erb
+
+7 directories, 14 files
+```
