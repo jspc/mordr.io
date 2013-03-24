@@ -1,0 +1,12 @@
+source 'https://rubygems.org'
+
+gem 'sinatra'
+gem 'redis'
+gem 'redis-objects'
+gem 'colorize'
+gem 'twitter-typeahead-rails', '0.8.0'
+gem 'mongoid',        '3.1.2'
+gem 'bson_ext',       '1.8.3'
+gem 'haml',           '4.0.0'
+gem 'bcrypt-ruby',    '~> 3.0.0'
+gem 'capistrano'
