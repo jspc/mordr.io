@@ -12,3 +12,9 @@ namespace :mordr do
     sh "git pull"
   end
 end
+
+desc "Cleanup Autosaves and other env shit"
+task :clean do
+  sh 'find . -type f -iname "*~" -exec rm -v {} \;'
+  sh 'find . -type f -iname "*#" -exec rm -v {} \;'
+end
