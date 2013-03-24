@@ -2,8 +2,6 @@
 #
 # Todo List Item controller
 
-require 'models/item'
-
 module MordrItem
   def find_item list_o, text
     list_o.items.find( :text => text ).first

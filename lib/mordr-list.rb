@@ -2,8 +2,6 @@
 #
 # ToDo list controller
 
-require 'models/mlist'
-
 module MordrList
   def find_list user_o, title
     user_o.lists.find( :title => title ).first

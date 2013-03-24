@@ -2,7 +2,6 @@
 #
 # user controller
 
-require 'models/user'
 require 'bcrypt'
 
 module MordrUser
