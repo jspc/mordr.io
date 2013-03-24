@@ -5,8 +5,8 @@
 require 'stringex'
 
 module MordrList
-  def find_list user_o, title
-    list_o = user_o.lists.first( :title => title )
+  def find_list user_o, slug
+    list_o = user_o.lists.first( :slug => slug )
     return list_o unless list_o.nil?
     return false
   end
