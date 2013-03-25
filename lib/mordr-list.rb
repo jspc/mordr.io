@@ -21,20 +21,23 @@ module MordrList
 
     return false if user_o.nil?
     return false if user_o.mlists.length == 0
-    return user_o.mlists.first( :slug => slug )
+
+    user_o.mlists.each do |mlist|
+      return mlist if mlist.slug == slug
+    end
+    return false
   end
 
   def new_list handle, title, desc
     return nil if find_list( handle, title )
 
     user_o = _user_to_object handle
-    list_o = user_o.create( :mlists => [ Mlist.new(
-                                                   :title     => title,
-                                                   :slug      => title.to_url,
-                                                   :describe  => desc
-                                                   )
-                            ] )
-    list_o.save
+    user_o.mlists << Mlist.new(
+                               :title     => title,
+                               :slug      => title.to_url,
+                               :describe  => desc
+                               )
+    user_o.save
     return title.to_url
   end
 

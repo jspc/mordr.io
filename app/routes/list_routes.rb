@@ -15,7 +15,7 @@ post '/create/' do
     desc  = params[:desc]
 
     slug = new_list user, title, desc
-    redirect '/#{user}/#{slug}/'
+    redirect "/#{user}/#{slug}/"
   else
     redirect '/login/'
   end
@@ -34,8 +34,9 @@ post '/delete/' do
 end
 
 get '/:user/:slug/' do
-  if @list = find_list( params[:user], params[:slug] )
+  if @mlist = find_list( params[:user], params[:slug] )
     if session[:handle] == params[:user] || @list.public?
+      @user = params[:user]
       erb :'lists/list'
     else
       @err = "You haven't the necessary permissions to view this list"

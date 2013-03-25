@@ -1,0 +1,10 @@
+<h3><%= @mlist.title %> for <%= @user %></h3>
+<br />
+
+<i><%= @mlist.describe %></i>
+<br />
+<ul>
+<% @mlist.items.each do |item| %>
+<li><b><%= item.text %> (<%= item.desc %>)</b></li>
+<% end %>
+</ul>
