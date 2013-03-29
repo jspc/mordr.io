@@ -1,0 +1,15 @@
+<h2>Welcome <%= @user %></h2>
+
+<ul>
+<li> <a href='/create/'>New List</a> </li>
+</ul>
+<br />
+<br />
+
+<b>My Lists</b>
+<ul>
+  <% @lists.each do |list| %>
+    <li><b><a href='/<%= @user %>/<%= list.slug %>/'> <%= list.title %> </a></b></li>
+  <% end %>
+</ul>
+

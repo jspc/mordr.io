@@ -1,5 +1,13 @@
-source :rubygems
+source 'https://rubygems.org'
 
+gem 'rake'
+gem 'sinatra'
 gem 'redis'
 gem 'redis-objects'
 gem 'colorize'
+gem 'mongo_mapper',              '~> 0.12.0'
+gem 'stringex'
+gem 'bson_ext',                  '1.8.3'
+gem 'haml',                      '4.0.0'
+gem 'bcrypt-ruby',               '~> 3.0.0'
+gem 'capistrano'
