@@ -1,6 +1,12 @@
 <h3><%= @mlist.title %> for <%= @user %></h3>
 <br />
 
+<% if @owner %>
+  <a href="/console/<%= @mlist._id %>/edit/">Edit <%= @mlist.title %></a> ||
+  <a href="/console/<%= @mlist.slug %>/delete/"> Delete <%= @mlist.title %></a>
+  <br />
+<% end %>
+
 <i><%= @mlist.describe %></i>
 <br />
 <ul>
