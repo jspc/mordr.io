@@ -37,7 +37,7 @@ get '/:user/:slug/' do
   if @mlist = find_list( params[:user], params[:slug] )
 
     @owner = true if session[:handle] == params[:user]
-    if @owner || @list.public?
+    if @owner || @mlist.public?
       @user = params[:user]
       erb :'lists/list'
     else
