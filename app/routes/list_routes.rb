@@ -35,7 +35,9 @@ end
 
 get '/:user/:slug/' do
   if @mlist = find_list( params[:user], params[:slug] )
-    if session[:handle] == params[:user] || @list.public?
+
+    @owner = true if session[:handle] == params[:user]
+    if @owner || @list.public?
       @user = params[:user]
       erb :'lists/list'
     else
@@ -48,3 +50,33 @@ get '/:user/:slug/' do
   end
 end
 
+get '/console/:slug/delete/' do
+  if find_list( session[:handle], params[:slug] )
+    del_list session[:handle], params[:slug]
+  end
+  redirect '/console/'
+end
+
+get '/console/:id/edit/' do
+  if @mlist = find_list_by_id( session[:handle], params[:id] )
+    @paid = has_paid?( session[:handle] )
+    erb :'lists/edit_list'
+  else
+    @err = "You don't have permissions to edit this list"
+    erb :error
+  end
+end
+
+post '/console/:id/edit/' do
+  if mlist = find_list_by_id( session[:handle], params[:id] )
+    paid = has_paid?( session[:handle] )
+    unless mlist.title == params[:title]
+      rename_list session[:handle], mlist._id, params[:title]
+    end
+    unless mlist.describe == params[:desc]
+      update_description session[:handle], mlist._id, params[:desc]
+    end
+  end
+  slug = find_list_by_id( session[:handle], params[:id] ).slug
+  redirect "/#{session[:handle]}/#{slug}/"
+end
