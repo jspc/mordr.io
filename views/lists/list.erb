@@ -11,6 +11,30 @@
 <br />
 <ul>
 <% @mlist.items.each do |item| %>
-<li><b><%= item.text %> (<%= item.desc %>)</b></li>
+<li><b><%= item.text %> (<%= item.desc %>)</b>
+<% if @owner %>
+  <a href="/console/<%= @mlist.slug %>/delete/<%= item._id %>/">Del</a> ||
+  <% if item.done? %>
+    <a href="/console/<%= @mlist.slug %>/uncomplete/<%= item._id %>/"> Set as Not Done! </a>
+  <% else %>
+    <a href="/console/<%= @mlist.slug %>/complete/<%= item._id %>/"> Set as Done! </a>
+  <% end %>
+<% end %>
+</li>
+
 <% end %>
 </ul>
+<br />
+<hr />
+
+<% if @owner %>
+  <b>Add item</b>
+  <form method='post' action='/console/<%= @mlist.slug %>/add_item/'>
+  <b>Text</b><br />
+  <input type='text' name='item_text' /><br />
+  <b>Description</b><br />
+  <input type='text' name='item_desc' /><br />
+  <br />
+  <input type='submit' value='Add' />
+<% end %>
+
