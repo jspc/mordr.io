@@ -54,4 +54,10 @@ module MordrUser
     return false
   end
 
+  def has_paid? handle
+    user_o = find_user handle
+    return false unless user_o
+    return user_o.paid?
+  end
+  
 end
