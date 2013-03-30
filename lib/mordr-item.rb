@@ -5,7 +5,7 @@
 module MordrItem
 
   def _list_object handle, slug
-    MordrList::find_list handle, slug
+    find_list handle, slug
   end
 
   def all_items handle, slug
