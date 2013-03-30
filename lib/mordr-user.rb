@@ -26,6 +26,12 @@ module MordrUser
     user_o.destroy if user_o
   end
 
+  def hashed_mail handle
+    user_o = find_user handle
+    return Digest::MD5.hexdigest( user_o.email ) if user_o
+    return nil
+  end
+
   def update_email handle, email
     user_o = find_user handle
     user_o.email = email if user_o
@@ -59,5 +65,5 @@ module MordrUser
     return false unless user_o
     return user_o.paid?
   end
-  
+
 end

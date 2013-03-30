@@ -10,6 +10,7 @@ post '/login/' do
   if can_login? handle, password
     session[:logged_in] = true
     session[:handle]    = handle
+    session[:gravatar]  = hashed_mail( handle )
     redirect '/console/'
   else
     @err = "Username and Password combination didn't match the thing"
@@ -34,6 +35,7 @@ post '/signup/' do
   if new_user handle, password, email
     session[:logged_in] = true
     session[:handle]    = handle
+    session[:gravatar]  = hashed_mail( handle )
     redirect '/'
   else
     @err = "We couldn't sign you up with those details"

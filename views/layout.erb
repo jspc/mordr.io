@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>Mordr.io</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+
+	<link href='http://fonts.googleapis.com/css?family=Overlock:700|Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/normalize.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+	<link rel="stylesheet" href="/css/grids.css">
+	<link rel="stylesheet" href="/css/mordr_over.css">
+
+        <script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+	<br />
+
+	<div class="grid--wrapper one-whole desk--one-half push--desk--one-quarter elems">
+          <div>
+	    <div class="bookend">
+	      <br />
+	      <h1 class="domain">MORDR</h1><h1 class="tld">.io</h1>
+	      <a href="/console/"><img class="gravatar" src="http://gravatar.com/avatar/<%= session[:gravatar] %>" /></a>
+	      <br /><br />
+	    </div>
+	  </div>
+	  <br />
+	  <div>
+	    <%= yield %>
+    	  </div>
+	</div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+        <script src="js/main.js"></script>
+
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>

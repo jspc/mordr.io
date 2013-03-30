@@ -1,33 +1,45 @@
-<h3><%= @mlist.title %> for <%= @user %></h3>
-<br />
-
+<h3 class="segment-head"><%= @mlist.title %></h3>
 <% if @owner %>
-  <a href="/console/<%= @mlist._id %>/edit/">Edit <%= @mlist.title %></a> ||
-  <a href="/console/<%= @mlist.slug %>/delete/"> Delete <%= @mlist.title %></a>
-  <br />
+  <a href="/console/<%= @mlist._id %>/edit/">Edit</a> || <a href="/console/<%= @mlist.slug %>/delete/"> Delete</a>
 <% end %>
-
+<br />
 <i><%= @mlist.describe %></i>
+<br />
 <br />
 <ul>
 <% @mlist.items.each do |item| %>
-<li><b><%= item.text %> (<%= item.desc %>)</b>
-<% if @owner %>
-  <a href="/console/<%= @mlist.slug %>/delete/<%= item._id %>/">Del</a> ||
   <% if item.done? %>
-    <a href="/console/<%= @mlist.slug %>/uncomplete/<%= item._id %>/"> Set as Not Done! </a>
+    <li class="complete">
   <% else %>
-    <a href="/console/<%= @mlist.slug %>/complete/<%= item._id %>/"> Set as Done! </a>
+    <li>
   <% end %>
-<% end %>
+
+  <% if @owner %>
+    <% if item.done? %>
+      <a class="list-item" href="/console/<%= @mlist.slug %>/uncomplete/<%= item._id %>/">
+    <% else %>
+      <a class="list-item" href="/console/<%= @mlist.slug %>/complete/<%= item._id %>/">
+    <% end %>
+  <% end %>
+
+  <b><%= item.text %> (<%= item.desc %>)</b> 
+
+  <% if @owner %>
+    </a>
+  <% end %>
+
+  <% if @owner %>
+    (<a href="/console/<%= @mlist.slug %>/delete/<%= item._id %>/">Del</a>)
+  <% end %>
+
 </li>
 
 <% end %>
 </ul>
-<br />
-<hr />
 
 <% if @owner %>
+   <br />
+   <hr /> 
   <b>Add item</b>
   <form method='post' action='/console/<%= @mlist.slug %>/add_item/'>
   <b>Text</b><br />
@@ -36,5 +48,6 @@
   <input type='text' name='item_desc' /><br />
   <br />
   <input type='submit' value='Add' />
+  </form>
 <% end %>
 

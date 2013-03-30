@@ -9,6 +9,7 @@ $LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'app', 'routes')
 require 'sinatra'
 require 'mongo_mapper'
 require 'redis'
+require 'digest/md5'
 
 require 'models/user'
 require 'models/mlist'
