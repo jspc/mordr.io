@@ -6,7 +6,7 @@ namespace :mordr do
     sh "bundle"
     sh "sass  public/css/style.scss:public/css/style.min.css --style compressed"
     sh "sass  public/css/csswizardry-grids.scss:public/css/grids.css --style compressed"
-    sh "ruby mordr/mordr.io.rb"
+    sh "unicorn -c $PWD/mordr/unicorn.rb -E production -l 0.0.0.0:3001 -D"
   end
 
   desc "Update app"
