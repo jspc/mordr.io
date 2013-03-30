@@ -1,0 +1,66 @@
+html {
+  background-color: #FFF;
+}
+
+div.elems {
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #FFF;
+  border: 2px solid #D9D9D9;
+}
+
+div.bookend {
+  background: #f2f5f6; /* Old browsers */
+  background: -moz-linear-gradient(top, #f2f5f6 0%, #e3eaed 95%, #d9d9d9 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f5f6), color-stop(95%,#e3eaed), color-stop(100%,#d9d9d9)); /* Chrome,Safari4+ */ 
+  background: -webkit-linear-gradient(top, #f2f5f6 0%,#e3eaed 95%,#d9d9d9 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #f2f5f6 0%,#e3eaed 95%,#d9d9d9 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #f2f5f6 0%,#e3eaed 95%,#d9d9d9 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #f2f5f6 0%,#e3eaed 95%,#d9d9d9 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#d9d9d9',GradientType=0 ); /* IE6-9 */
+  font-family: 'Overlock', cursive;
+}
+
+img.gravatar {
+  float: right;
+  right: 18px;
+  height: 45px;
+  width: 45px;
+}
+
+h1.domain {
+  color: #168DB5;
+  vertical-align:absbottom; 
+  display:inline;
+}
+
+h1.tld {
+  color: #000;
+  vertical-align:absbottom;
+  display:inline;
+}
+
+h3.segment-head {
+  vertical-align:absbottom;
+  display:inline;
+}
+
+a.last-item {
+  color: #000;
+}
+
+a.list-item:link {
+  text-decoration:none;
+  color: #000;
+}
+
+a.list-item:visited {
+  text-decoration:none;
+  color: #000;
+}
+
+a.last-item:hover {text-decoration:underline;}
+a.last-item:active {text-decoration:underline;}
+
+li.complete {
+  background: url('/images/tick.png') no-repeat left top;
+}
