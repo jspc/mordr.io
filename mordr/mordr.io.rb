@@ -15,13 +15,15 @@ require 'models/user'
 require 'models/mlist'
 require 'models/item'
 
-load 'mordr-user.rb'
-load 'mordr-list.rb'
-load 'mordr-item.rb'
+class Mordr < Sinatra::Application
+  load 'mordr-user.rb'
+  load 'mordr-list.rb'
+  load 'mordr-item.rb'
 
-load 'mordr_config.rb'
-load 'mordr_routes.rb'
+  load 'mordr_config.rb'
+  load 'mordr_routes.rb'
 
-include MordrUser
-include MordrList
-include MordrItem
+  include MordrUser
+  include MordrList
+  include MordrItem
+end
