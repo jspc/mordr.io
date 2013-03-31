@@ -22,7 +22,10 @@
     <% end %>
   <% end %>
 
-  <b><%= item.text %> (<%= item.desc %>)</b> 
+  <b><%= item.text %></b> 
+  <% if item.desc %>
+    <small> (<%= item.desc %>) </small>
+  <% end %>
 
   <% if @owner %>
     </a>
@@ -44,7 +47,7 @@
   <form method='post' action='/console/<%= @mlist.slug %>/add_item/'>
   <b>Text</b><br />
   <input type='text' name='item_text' /><br />
-  <b>Description</b><br />
+  <b>Notes</b><br />
   <input type='text' name='item_desc' /><br />
   <br />
   <input type='submit' value='Add' />
