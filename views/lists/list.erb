@@ -23,7 +23,7 @@
   <% end %>
 
   <b><%= item.text %></b> 
-  <% if item.desc %>
+  <% if item.desc.length > 0 %>
     <small> (<%= item.desc %>) </small>
   <% end %>
 
@@ -32,7 +32,9 @@
   <% end %>
 
   <% if @owner %>
-    (<a href="/console/<%= @mlist.slug %>/delete/<%= item._id %>/">Del</a>)
+      <a href="/console/<%= @mlist.slug %>/delete/<%= item._id %>/">
+      	 <img class='trash' src='/images/trashcan.svg' alt='delete' />
+      </a>
   <% end %>
 
 </li>
@@ -41,16 +43,6 @@
 </ul>
 
 <% if @owner %>
-   <br />
-   <hr /> 
-  <b>Add item</b>
-  <form method='post' action='/console/<%= @mlist.slug %>/add_item/'>
-  <b>Text</b><br />
-  <input type='text' name='item_text' /><br />
-  <b>Notes</b><br />
-  <input type='text' name='item_desc' /><br />
-  <br />
-  <input type='submit' value='Add' />
-  </form>
+   <a class='add_item' href='/console/<%= @mlist.slug %>/add_item/'>Add Item</a><br />
 <% end %>
 

@@ -64,3 +64,8 @@ a.last-item:active {text-decoration:underline;}
 li.complete {
   background: url('/images/tick.png') no-repeat left top;
 }
+
+img.trash {
+  height: 16px;
+  width: 16px;
+}
