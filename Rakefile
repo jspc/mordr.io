@@ -13,6 +13,17 @@ namespace :mordr do
   task :update do
     sh "git pull"
   end
+
+  desc "Slaughter unicorns"
+  task :kill do
+    sh "for pid in $(ps -o 'pid,comm' -u $(whoami)|grep unicorn|awk '{print $1}'); do kill -9 $pid; done"
+  end
+
+  desc "Slaughter and Resurrect"
+  task :restart do
+    sh "rake mordr:kill"
+    sh "rake mordr:start"
+  end
 end
 
 desc "Cleanup Autosaves and other env shit"

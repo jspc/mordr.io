@@ -1,3 +1,13 @@
+get '/console/:slug/add_item/' do
+  if find_list session[:handle], params[:slug]
+    @owner = true
+    @slug  = params[:slug]
+    erb :'items/add_item'
+  else
+    @err = "This handle and list do not exist in this configuration"
+    erb :error
+  end
+end
 
 post '/console/:slug/add_item/' do
   if add_item( session[:handle], params[:slug], params[:item_text], params[:item_desc] )
