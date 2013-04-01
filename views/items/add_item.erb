@@ -1,0 +1,15 @@
+<h3 class='segment-head'>Add Item</h3>
+<br />
+<br />
+<% if @owner %>
+  <form method='post' action='/console/<%= @slug %>/add_item/'>
+  <b>Text</b><br />
+  <input type='text' name='item_text' /><br />
+  <b>Notes</b><br />
+  <input type='text' name='item_desc' /><br />
+  <br />
+  <input type='submit' value='add' onclick='parent.$.colorbox.close()' />
+  </form>
+<% else %>
+   <b>An error occured. You don't own this list.</b>
+<% end %>
