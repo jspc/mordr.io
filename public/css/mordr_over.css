@@ -20,6 +20,10 @@ div.bookend {
   font-family: 'Overlock', cursive;
 }
 
+div.titular {
+  margin: 2%;
+}
+
 img.gravatar {
   float: right;
   right: 18px;
@@ -39,7 +43,7 @@ h1.tld {
   display:inline;
 }
 
-h3.segment-head {
+.segment-head {
   vertical-align:absbottom;
   display:inline;
 }
@@ -60,6 +64,14 @@ a.list-item:visited {
 
 a.last-item:hover {text-decoration:underline;}
 a.last-item:active {text-decoration:underline;}
+
+ul.main-page {
+  font-size: 120%;
+}
+
+p.confess {
+  font-size: 120%;
+}
 
 li.complete {
   background: url('/images/tick.png') no-repeat left top;
