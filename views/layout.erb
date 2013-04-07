@@ -52,7 +52,7 @@
 	      <% if session[:handle].nil? %>
 	        <a href="/login/"><img class="gravatar" src="/images/who.jpg" alt="Logged Out" /></a>
 	      <% else %>
-	        <a href="/<%= session[:handle] %>/"><img class="gravatar" src="http://gravatar.com/avatar/<%= session[:gravatar] %>" alt="Avatar" /></a>
+	        <a href="/<%= session[:handle] %>/"><img class="gravatar" src="http://gravatar.com/avatar/<%= session[:gravatar] %>?d=mm" alt="Avatar" /></a>
 	      <% end %>
 	      <br /><br />
 	    </div>

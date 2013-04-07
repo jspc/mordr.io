@@ -11,7 +11,7 @@ post '/login/' do
     session[:logged_in] = true
     session[:handle]    = handle
     session[:gravatar]  = hashed_mail( handle )
-    redirect '/console/'
+    redirect "/#{handle}/"
   else
     @err = "Username and Password combination didn't match the thing"
     erb :error
@@ -36,7 +36,7 @@ post '/signup/' do
     session[:logged_in] = true
     session[:handle]    = handle
     session[:gravatar]  = hashed_mail( handle )
-    redirect '/'
+    redirect "/#{handle}/"
   else
     @err = "We couldn't sign you up with those details"
     erb :error
