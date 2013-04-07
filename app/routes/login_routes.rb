@@ -44,8 +44,9 @@ post '/signup/' do
 end
 
 get '/:user/' do
-  if @user = find_user( params[:user] )
-    @lists = all_lists params[:user]
+  if @user   = find_user( params[:user] )
+    @lists   = all_lists params[:user]
+    @hashed  = hashed_mail @user.handle
     erb :'login/console'
   else
     @err = "User '#{params[:user]}' does not exist"
