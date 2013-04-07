@@ -11,7 +11,7 @@ post '/login/' do
     session[:logged_in] = true
     session[:handle]    = handle
     session[:gravatar]  = hashed_mail( handle )
-    redirect '/console/'
+    redirect "/#{handle}/"
   else
     @err = "Username and Password combination didn't match the thing"
     erb :error
@@ -36,19 +36,19 @@ post '/signup/' do
     session[:logged_in] = true
     session[:handle]    = handle
     session[:gravatar]  = hashed_mail( handle )
-    redirect '/'
+    redirect "/#{handle}/"
   else
     @err = "We couldn't sign you up with those details"
     erb :error
   end
 end
 
-get '/console/' do
-  if not session[:logged_in]
-    redirect '/'
-  else
-    @user  = session[:handle]
-    @lists = all_lists @user
+get '/:user/' do
+  if @user = find_user( params[:user] )
+    @lists = all_lists params[:user]
     erb :'login/console'
+  else
+    @err = "User '#{params[:user]}' does not exist"
+    erb :error
   end
 end
