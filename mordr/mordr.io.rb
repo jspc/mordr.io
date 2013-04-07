@@ -10,6 +10,7 @@ require 'sinatra'
 require 'mongo_mapper'
 require 'redis'
 require 'digest/md5'
+require 'json'
 
 require 'models/user'
 require 'models/mlist'
