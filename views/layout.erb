@@ -10,8 +10,10 @@
         <meta name="viewport" content="width=device-width, minimum-scale=1.0">
 
         <script type="text/javascript" src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="/js/jquery.colorbox-min.js"></script>
+	<script type="text/javascript" src="http://twitter.github.com/hogan.js/builds/2.0.0/hogan-2.0.0.js"></script>
+	<script type="text/javascript" src="/js/typeahead.js"></script>
         <script type="text/javascript" src="/js/mordr_over.js"></script>
 
 	<link href='http://fonts.googleapis.com/css?family=Overlock:700|Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
@@ -42,6 +44,12 @@
 	    <div class="bookend">
 	      <br />
 	      <h1 class="domain">MORDR</h1><h1 class="tld">.io</h1>
+
+	      <form class="search_bar" action="/search/" method="post">
+	      <input type="text" class="search" placeholder="search mordr" />
+	      <input type="image" class="mag" src="/images/mag.svg" alt="go" />
+	      </form>
+
 	      <a href="/console/"><img class="gravatar" src="http://gravatar.com/avatar/<%= session[:gravatar] %>" alt="Avatar" /></a>
 	      <br /><br />
 	    </div>
