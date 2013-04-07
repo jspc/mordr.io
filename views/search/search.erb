@@ -1,0 +1,23 @@
+<h3 class="segment-head">Search</h3>
+<br />
+
+<br />
+<% if @user_list %>
+   <ul>
+   <b>users:</b><br />
+   <% @user_list.each do |handle| %>
+     <li><a class="list-item" href="/<%= handle %>/"><%= handle %></a></li>
+   <% end %>
+   </ul>
+<% end %>
+
+<hr class="foot" />
+
+<% if @list_list %>
+   <ul>
+   <b>lists:</b><br />
+   <% @list_list.each do |list| %>
+     <li><a class="list-item" href="/<%= list[:handle] %>/<%= list[:slug] %>/"><%= list[:title] %> <small>by <%= list[:handle] %> </small></a></li>
+   <% end %>
+   </ul>
+<% end %>

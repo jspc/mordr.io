@@ -6,13 +6,15 @@
     <head>
         <meta charset="utf-8">
         <title>Mordr.io</title>
-        <meta name="Mordor.io" content="Mordr.io is an easy and free to use to-do list for your browser and mobile phone.">
+        <meta name="description" content="Mordr.io is an easy and free to use to-do list for your browser and mobile phone.">
         <meta name="viewport" content="width=device-width, minimum-scale=1.0">
 		
 
         <script type="text/javascript" src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-	    <script type="text/javascript" src="/js/jquery.colorbox-min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="/js/jquery.colorbox-min.js"></script>
+		<script type="text/javascript" src="http://twitter.github.com/hogan.js/builds/2.0.0/hogan-2.0.0.js"></script>
+		<script type="text/javascript" src="/js/typeahead.js"></script>
         <script type="text/javascript" src="/js/mordr_over.js"></script>
 
 	    <link href='http://fonts.googleapis.com/css?family=Overlock:700|Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
@@ -23,16 +25,15 @@
 	    <link rel="stylesheet" href="/css/colorbox.css">
 	    <link rel="stylesheet" href="/css/mordr_over.css">
 
-        <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-       ga('create', 'UA-39942768-1', 'mordr.io');
-       ga('send', 'pageview');
-
-       </script>
+		ga('create', 'UA-39942768-1', 'mordr.io');
+		ga('send', 'pageview');
+		</script>
 
     </head>
     <body>
@@ -47,7 +48,16 @@
 	      <div class="bookend">
 	      <br />
 	      <h1 class="domain">MORDR</h1><h1 class="tld">.io</h1>
-	      <a href="/console/"><img class="gravatar" src="http://gravatar.com/avatar/<%= session[:gravatar] %>" alt="Avatar" /></a>
+
+	      <form class="search_bar" action="/search/" method="post">
+	      <input type="text" name="search" class="search" placeholder="search mordr" />
+	      <input type="image" class="mag" src="/images/mag.svg" alt="go" />
+	      </form>
+	      <% if session[:handle].nil? %>
+	        <a href="/login/"><img class="gravatar" src="/images/who.jpg" alt="Logged Out" /></a>
+	      <% else %>
+	        <a href="/<%= session[:handle] %>/"><img class="gravatar" src="http://gravatar.com/avatar/<%= session[:gravatar] %>?d=mm" alt="Avatar" /></a>
+	      <% end %>
 	      <br /><br />
 	      </div>
 	  </div>
@@ -56,7 +66,6 @@
 	    <%= yield %>
     	  </div>
 	</div>
-
 
     </body>
 </html>

@@ -5,6 +5,10 @@
 require 'bcrypt'
 
 module MordrUser
+  def all_users
+    User.all
+  end
+
   def find_user handle
     user_o = User.first( :handle => handle )
     return user_o unless user_o.nil?
