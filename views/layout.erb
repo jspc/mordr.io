@@ -49,8 +49,11 @@
 	      <input type="text" name="search" class="search" placeholder="search mordr" />
 	      <input type="image" class="mag" src="/images/mag.svg" alt="go" />
 	      </form>
-
-	      <a href="/console/"><img class="gravatar" src="http://gravatar.com/avatar/<%= session[:gravatar] %>" alt="Avatar" /></a>
+	      <% if session[:handle].nil? %>
+	        <a href="/login/"><img class="gravatar" src="/images/who.jpg" alt="Logged Out" /></a>
+	      <% else %>
+	        <a href="/<%= session[:handle] %>/"><img class="gravatar" src="http://gravatar.com/avatar/<%= session[:gravatar] %>" alt="Avatar" /></a>
+	      <% end %>
 	      <br /><br />
 	    </div>
 	  </div>
