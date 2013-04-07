@@ -23,6 +23,7 @@ GEM
       tilt
     highline (1.6.16)
     i18n (0.6.1)
+    json (1.7.7)
     kgio (2.8.0)
     mongo (1.8.3)
       bson (~> 1.8.3)
@@ -70,6 +71,7 @@ DEPENDENCIES
   capistrano
   colorize
   haml (= 4.0.0)
+  json
   mongo_mapper (~> 0.12.0)
   rake
   rb-fsevent (~> 0.9.1)
