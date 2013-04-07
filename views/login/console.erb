@@ -1,16 +1,21 @@
-<h3 class="segment-head">Welcome <%= @user %></h3>  (<a href="/logout/">Log Out</a>)
-<br />
-<br />
-<ul>
-<li> <a href='/create/'>New List</a> </li>
-</ul>
+<img class="profile" src="http://gravatar.com/avatar/<%= session[:gravatar] %>" alt="Avatar" />
+<h3 class="segment-head"><%= @user.handle %></h3>
+<% if @user.handle == session[:handle] %>
+   <small>(<a href="/logout/">logout</a>)</small>
+<% end %>
 <br />
 <br />
 
-<b>My Lists</b>
+Member Since: <%= @user.created_at.strftime( "%d %b, %Y" ) %>
+<br />
+<br />
+<% if @user.handle == session[:handle] %>
+   <a href="/create/">New List</a><br />
+<% end %>
+
+Lists:
 <ul>
   <% @lists.each do |list| %>
-    <li><b><a href='/<%= @user %>/<%= list.slug %>/'> <%= list.title %> </a></b></li>
+    <li><b><a href='/<%= @user.handle %>/<%= list.slug %>/'> <%= list.title %> </a></b><small>Created: <%= list.created_at.strftime( "%d %b, %Y" ) %> </small></li>
   <% end %>
 </ul>
-

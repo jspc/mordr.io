@@ -31,6 +31,11 @@ img.gravatar {
   width: 45px;
 }
 
+img.profile {
+  height: 90px;
+  width: 90px;
+}
+
 h1.domain {
   color: #168DB5;
   vertical-align:absbottom; 
