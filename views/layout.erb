@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+`<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -54,9 +54,9 @@
 	      <input type="image" class="mag" src="/images/mag.svg" alt="go" />
 	      </form>
 	      <% if session[:handle].nil? %>
-	        <a href="/login/"><img class="gravatar" src="/images/who.jpg" alt="Logged Out" /></a>
+	        <a href="/login/"><img class="gravatar" src="/images/who.jpg" alt="Not Logged In Avatar" /></a>
 	      <% else %>
-	        <a href="/<%= session[:handle] %>/"><img class="gravatar" src="http://gravatar.com/avatar/<%= session[:gravatar] %>?d=mm" alt="Avatar" /></a>
+	        <a href="/<%= session[:handle] %>/"><img class="gravatar" src="http://gravatar.com/avatar/<%= session[:gravatar] %>?d=mm" alt="Mordr Avatar" /></a>
 	      <% end %>
 	      <br /><br />
 	      </div>
