@@ -15,3 +15,6 @@ gem 'rb-fsevent',                '~> 0.9.1'
 gem 'sass'
 gem 'unicorn'
 gem 'json'
+gem 'excellent'
+gem 'simplecov'
+
