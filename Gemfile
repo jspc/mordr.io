@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rake'
+gem 'rspec'
 gem 'sinatra'
 gem 'redis'
 gem 'redis-objects'
@@ -16,5 +17,4 @@ gem 'sass'
 gem 'unicorn'
 gem 'json'
 gem 'excellent'
-gem 'simplecov'
-
+gem 'coco'
