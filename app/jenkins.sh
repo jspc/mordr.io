@@ -2,8 +2,10 @@
 export PATH=/usr/local/bin:$PATH
 export VERS=$(cat .ruby-version)
 
+eval "$(rbenv init -)"
+
 [ $(rbenv local $VERS) ] || rbenv install $VERS
-rbenv local $VERS
+rbenv global $VERS
 echo -e "\n\n$(ruby -v)\n\n"
 
 bundle
