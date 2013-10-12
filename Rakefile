@@ -1,5 +1,7 @@
 require 'rake'
 
+task :default => [ 'mordr:start' ]
+
 namespace :mordr do
   desc "Start the app"
   task :start do
