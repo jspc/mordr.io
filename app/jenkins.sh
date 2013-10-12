@@ -1,4 +1,5 @@
 # Build env
+export PATH=/usr/local/bin:$PATH
 export VERS=$(cat .ruby-version)
 
 [ $(rbenv local $VERS) ] || rbenv install $VERS
@@ -8,6 +9,8 @@ echo -e "\n\n$(ruby -v)\n\n"
 bundle
 rake -T
 rake clean
+
+rbenv rehash
 
 # Static analysis
 excellent **/*
